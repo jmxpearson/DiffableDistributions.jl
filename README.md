@@ -11,5 +11,5 @@ immutable DNormal{T <: Real}
     σ::T
 end
 ```
-- We then extend `Normal` with an outer constructor that, when any argument `x::ForwardDiff.ForwardDiffNumber`, we instead create a `DNormal`.
+- We then extend `Normal` with an outer constructor that, when any argument `x::ForwardDiff.ForwardDiffNumber`, delegates to a constructor for `DNormal`.
 - This allows `Normal` to continue as a leaf type while allowing differentiability to be facilitated transparently through parameterized distributions.
