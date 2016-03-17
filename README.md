@@ -6,7 +6,7 @@ Render the distributions in [Distributions.jl](https://github.com/JuliaStats/Dis
 - This requires that each distribution `d` derives from `Abstract<d>`.
 - We create a parameterized, differentiable distribution corresponding to each `d`. Thus, for the case of `Normal <: AbstractNormal`, we have:
 ```julia
-immutable DNormal{T <: Real}
+immutable DNormal{T <: Real} <: AbstractNormal
     μ::T
     σ::T
 end
